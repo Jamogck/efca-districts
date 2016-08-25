@@ -1,0 +1,83 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  background-image: url('../../img/pattern.png');
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+	&:hover, &:focus {
+		color: $blue;
+	}
+}
+
+img {
+	width: 100%;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.flex {
+	@include flexbox;
+}
+
+.flex-centered {
+	margin: auto;
+}
+
+.wrap {
+	height: 100%;
+}
+
+.inner {
+	max-width: 1500px;
+	margin: auto;
+	padding: 0 1em;
+}
+
+.page-block {
+	padding-top: 4em;
+}
+
+.page-content {
+	width: 100%;
+}
+
+.size1of1 {
+	width: 100%;
+}
+
+.size1of2 {
+	width: 50%;
+}
+
+.size1of3 {
+	flex-basis: 30%;
+}
+
+@media screen and (min-width: 615px) {
+	.page-block {
+		@include flexbox;
+		/*flex-flow: row wrap;*/
+	}
+
+	.page_content {
+		padding: 4em 0;
+		width: 65%;
+		/*max-width: 0px;*/
+		margin: auto;
+	}
+
+	.large-size1of2 {
+		width: 50%;
+	}
+}
+

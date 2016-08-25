@@ -1,0 +1,152 @@
+.site-title {
+	text-align: right;
+}
+
+#primary-nav {
+	position: relative;
+}
+
+#nav_trigger {
+	position: absolute;
+	left: 0px;
+	top: -6px;
+}
+
+
+.menu {
+	-webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+
+    justify-content: space-between;
+
+	li {
+		list-style: none;
+		a {
+			display: block;
+		}
+	}
+}
+
+.overlay .first {
+	width: 95%;
+	height: auto;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    background: #ebebeb;
+    a {
+    	padding: 4px 0 4px;
+    }
+    @media screen and (min-width: 430px) {
+    	width: 45%;
+    	height: 170px;
+    }
+}
+
+.first > span {
+	font-weight: bold;
+}
+
+.first_level_menu {
+	display: none;
+}
+
+.submenu {
+	display: none;
+}
+
+.overlay {
+	display: block;
+}
+
+@media screen and (min-width: 615px) {
+	#nav_trigger {
+		display: none;
+	}
+
+	.site-title {
+		text-align: left;
+	}
+
+	#primary-nav {
+		position: relative;
+
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		align-items: baseline;
+		h1 {
+			width: 20%;
+		}
+		.first_level_menu {
+			width: 80%;
+			span {
+				cursor: pointer;
+			}
+		}
+	}
+
+	.menu li {
+		-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+		-moz-box-flex: 1;         /* OLD - Firefox 19- */
+		/*width: 25%;*/               /* For old syntax, otherwise collapses. */
+		-webkit-flex: 1;          /* Chrome */
+		-ms-flex: 1;              /* IE 10 */
+		flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+		text-align: center;
+	}
+
+	.first_level_menu {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+
+	.submenu {
+		width: 100%;
+		padding: 25px;
+		position: absolute;
+		top: 80px;
+		left: 0;
+		background: #e6e6e6;
+	}
+
+	.expanded {
+		margin-bottom: 100px;
+	}
+
+	.expanded > span {
+		color: $blue;
+		position: relative;
+	}
+
+	.expanded > .submenu {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+
+	.expanded > span:after {
+	    content: " ";
+	    display: block;
+	    height: 14px;
+	    margin-bottom: -9px;
+	    position: absolute;
+	    top: 24px;
+	    left: 15%;
+
+	    border-right: 24px solid transparent;
+	    border-bottom: 24px solid #e6e6e6;;
+	    border-left: 24px solid transparent;
+	}
+}

@@ -1,0 +1,155 @@
+@import 'nav';
+
+.topbar {
+	height: 60px;
+	background: $blue;
+	a:first-of-type {
+		line-height: 2.2em;
+		color: #FFF;
+	}
+	.inner {
+		padding-top: 12px;
+		justify-content: space-between;
+		a.btn {
+			-webkit-box-flex: 0 0 115px;      /* OLD - iOS 6-, Safari 3.1-6 */
+			-moz-box-flex: 0 0 115px;         /* OLD - Firefox 19- */
+			/*width: 115px;*/               /* For old syntax, otherwise collapses. */
+			-webkit-flex: 0 0 115px;          /* Chrome */
+			-ms-flex: 0 0 115px;              /* IE 10 */
+			flex: 0 0 115px;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+		}
+	}
+}
+
+#searchForm {
+	input[type="text"] {
+		width: 75px;
+		border-radius: 4px 0 0 4px;
+		padding-left: 8px;
+	}
+	input[type="text"]:focus {
+		width: 173px;
+	}
+}
+
+.hero {
+	position: relative;
+	width: 100%;
+	height: 70vh;
+	background-image: url('../../img/whatwebelieve-l1.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	overflow: hidden;
+	background-color: #ffd352;
+	text-align: center;
+
+	@media screen and (max-width: 615px) {
+		height: 300px;
+		background-size: 150px 150px;
+	}
+}
+
+.hero_text {
+	height: 110px;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	h2 {
+		margin: 0;
+		font-size: calc(2em + 2vw);
+		color: #ff5353;
+		
+	}
+}
+
+.animated-layer {
+	width: 100%;
+	height: 70vh;
+	background-image: url('../../img/whatwebelieve-l2.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	-webkit-animation-name: sparkle;
+    -webkit-animation-duration: 0.25s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-direction: alternate;
+    -moz-animation-name: sparkle;
+    -moz-animation-duration: 0.25s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -moz-animation-direction: alternate;
+    -ms-animation-name: sparkle;
+    -ms-animation-duration: 0.25s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -ms-animation-direction: alternate;
+    -o-animation-name: sparkle;
+    -o-animation-duration: 0.25s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    -o-animation-direction: alternate;
+    animation-name: sparkle;
+    animation-duration: 0.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+
+    @media screen and (max-width: 615px) {
+		height: 300px;
+		background-size: 350px 350px;
+	}
+}
+
+#main .inner {
+	background: #FFF;
+}
+
+.card {
+	margin: 1em;
+	.card_img {
+		overflow: hidden;
+		@include aspect-ratio(16,9);
+	}
+	img {
+		box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+	}
+	h3 a {
+		position: relative;
+		color: $blue;
+	span {
+			font-size: 15px;
+		    margin-left: 4px;
+		}
+	}
+}
+
+.media_block {
+	border-top: 1px solid #ebebeb;
+	padding: 1em 0 2em;
+	@include flexbox;
+	.media_image {
+		width: 25%;
+		.btn {
+			display: block;
+			width: 100%;
+			margin-top: 8px;
+			text-align: center;
+		}
+	}
+	.media_description {
+		width: 75%;
+	    padding-left: 1em;
+	}
+	.contact_info ul {
+		display: none;
+	}
+}
+
+#page-footer {
+	background: $blue;
+}
